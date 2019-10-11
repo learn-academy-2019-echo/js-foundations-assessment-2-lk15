@@ -137,4 +137,12 @@ const updateToSingular = (numberArray, speciesArray) => {
     return newString
 }
 
-console.log(updateToSingular(amounts, animals))
+// console.log(updateToSingular(amounts, animals))
+
+var text = 'outside'
+function logIt(){
+    console.log(text)
+  var text = 'inside'
+
+}
+logIt()
