@@ -99,18 +99,32 @@ The console will show 'outside' since text is not defined in the function until 
     }
 })();
 
+A closure in this example would enable you to update the counter without declaring the counter as a global variable. This is helpful because a global variable can be changed by other functions in the code, and so is more prone to being updated unintentionally.
 
   
   Reference: https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
              https://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript
+             
+             https://www.youtube.com/watch?v=w1s9PgtEoJs
+             
+             https://www.youtube.com/watch?v=FYrtnS3X_Lw
 
 
 7. STRETCH: What is an API?
 
-  Your answer:
+  Your answer: Not sure
 
-  Researched answer:
-
+  Researched answer: An API is an Application Programming Interface. An API is the programming instructions and standards (building blocks) for making a software application that is powered by the company's service. APIs enable applications to work together (a software-to-software interface).
+  
+  API Examples: 
+  
+  Google Maps API: allows developers to embed Google Maps on their websites using a JavaScript or Flash interface.
+  
+  Amazon API: allows developers to access Amazon product information. Using the Amazon API, third-party websites can post direct links to Amazon products with the option to "buy now"
+  
+  References:
+  https://money.howstuffworks.com/business-communications/how-to-leverage-an-api-for-conferencing1.htm
+  https://www.webopedia.com/TERM/A/API.html
 
 ### Additional Feedback Questions.
 
