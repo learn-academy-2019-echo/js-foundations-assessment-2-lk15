@@ -37,15 +37,30 @@ var randomNouns = ["streetlamp", "potato", "teeth", "conclusion", "nephew", "tem
 
 // 3a. Write a function that returns every other item from the array as one string. Expected output: "streetlamp teeth nephew database"
 
+// const makeString = (array) => {
+//     let everyOther = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if (i % 2 === 0) {
+//             everyOther.push(array[i]) ;
+//         }
+//     }
+//     return everyOther.join(' ');
+// }
+
+// const makeString = (array) => {
+//     let everyOther = [];
+//     array.forEach((item, index) => {
+//         if (index % 2 === 0) {
+//             everyOther.push(item);
+//         }
+//     })
+//     return everyOther.join(' ')
+// }
+
 const makeString = (array) => {
-    let everyOther = [];
-    for (let i = 0; i < array.length; i++) {
-        if (i % 2 === 0) {
-            everyOther.push(array[i]) ;
-        }
-    }
-    return everyOther.join(' ');
+    return array.filter((word, index) => index % 2 === 0).join(' ')
 }
+
 
 // console.log(makeString(randomNouns))
 
@@ -103,46 +118,68 @@ var animals = ["ducks", "elephants", "pangolins", "zebras", "giraffes", "penguin
 
 // 5a. Write a function that takes the two variables and returns a combined string. Expected output: "9 ducks 1 elephants 8 pangolins 16 zebras 5 giraffes 1 penguins 42 llamas"
 
-const combinedString = (array1, array2) => {
-    let newString = ''
-    for (let i = 0; i < array1.length -1; i++) {
-        newString += `${amounts[i]} ${animals[i]} `
+// const combinedString = (array1, array2) => {
+//     let newString = ''
+//     //for all elements except for the last element, add a space after the animal type
+//     for (let i = 0; i < array1.length -1; i++) {
+//         newString += `${amounts[i]} ${animals[i]} `
+//     }
+//     //for the last element, do not add a space after the animal type
+//     newString += `${amounts[array1.length-1]} ${animals[array1.length-1]}`
+//     return newString
+// }
+
+const combinedString = (numberArray, animalArray) => {
+    let combinedArray = []
+    for (let i = 0; i < numberArray.length; i++) {
+        let number = numberArray[i]
+        let species = animalArray[i]
+        let numAnimals = `${number} ${species}`
+        combinedArray.push(numAnimals)
     }
-    newString += `${amounts[array1.length-1]} ${animals[array1.length-1]}`
-    return newString
+    return combinedArray.join(' ')
 }
 
-// console.log(combinedString(amounts, animals))
+console.log(combinedString(amounts, animals))
 
 
 
 
 // 5b. STRETCH: Create a function that combines the two variables and updates the animal to be singular if the animal's corresponding number is 1. Expected output: "9 ducks 1 elephant 8 pangolins 16 zebras 5 giraffes 1 penguin 42 llamas"
 
-const updateToSingular = (numberArray, speciesArray) => {
-    let newString = '';
-    for (let i = 0; i < numberArray.length -1; i++) {
-        if (numberArray[i] === 1) {
-            newString += `${numberArray[i]} ${speciesArray[i].slice(0, speciesArray[i].length -1)} `
-        } else {
-            newString += `${numberArray[i]} ${speciesArray[i]} `
-        }
-    }
-    if (numberArray[numberArray.length-1] === 1) {
-        newString += `${numberArray[numberArray.length-1]} ${speciesArray[numberArray.length -1].slice(0, speciesArray[numberArray.length -1].length -1)}`
-    } else {
-        newString += `${numberArray[numberArray.length-1]} ${speciesArray[numberArray.length -1]}`
-    }
+// const updateToSingular = (numberArray, speciesArray) => {
+//     let newString = '';
     
-    return newString
+//     //for all elements except for the last element, add a space after the animal type
+//     for (let i = 0; i < numberArray.length -1; i++) {
+//         if (numberArray[i] === 1) {
+//             newString += `${numberArray[i]} ${speciesArray[i].slice(0, speciesArray[i].length -1)} `
+//         } else {
+//             newString += `${numberArray[i]} ${speciesArray[i]} `
+//         }
+//     }
+    
+//     //for the last element, do not add a space after the animal type
+//     if (numberArray[numberArray.length-1] === 1) {
+//         newString += `${numberArray[numberArray.length-1]} ${speciesArray[numberArray.length -1].slice(0, speciesArray[numberArray.length -1].length -1)}`
+//     } else {
+//         newString += `${numberArray[numberArray.length-1]} ${speciesArray[numberArray.length -1]}`
+//     }
+//     return newString
+// }
+
+const updateToSingular = (numberArray, animalArray) => {
+    let combinedArray = []
+    for (let i = 0; i < numberArray.length; i++) {
+        let number = numberArray[i]
+        let species = animalArray[i]
+        if (number === 1) {
+            species = species.slice(0, species.length -1)
+        }
+        let numAnimals = `${number} ${species}`
+        combinedArray.push(numAnimals)
+    }
+    return combinedArray.join(' ')
 }
 
-// console.log(updateToSingular(amounts, animals))
-
-var text = 'outside'
-function logIt(){
-    console.log(text)
-  var text = 'inside'
-
-}
-logIt()
+console.log(updateToSingular(amounts, animals))
