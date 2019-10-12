@@ -80,9 +80,29 @@ The console will show 'outside' since text is not defined in the function until 
 
 6. STRETCH: What is a closure, what is it good for and how do you recognize one?
 
-  Your answer:
+  Your answer: Not sure
 
-  Researched answer:
+  Researched answer: A closure gives you access to the outer function's scope from an inner function, even after the outer function has returned. Closures are created every time a function is created.
+  
+  A closure can be recognized as a function that is defined inside another function and then returned or passed to another function.
+  
+  Closures are commonly used to give objects data privacy -- the enclosed variables are only in scope within the outer function.
+  
+  Code example of a closure:
+  
+   var updateClickCount=(function(){
+    var counter=0;
+
+    return function(){
+     ++counter;
+     // do something with counter
+    }
+})();
+
+
+  
+  Reference: https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
+             https://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript
 
 
 7. STRETCH: What is an API?
@@ -95,11 +115,13 @@ The console will show 'outside' since text is not defined in the function until 
 ### Additional Feedback Questions.
 
 1. Do you have a suggestion for a Check In question?
-
+What is your favorite TV show?/Do you have any Netflix recommendations?
 
 
 2. What was your favorite topic this week?
+I liked learning about React and had fun working on the projects and using trial and error to get things to work.
 
 
 
 3. What was your "A-ha!" moment this week?
+The state and props lectures really helped me understand the concepts.
